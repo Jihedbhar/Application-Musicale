@@ -1,0 +1,29 @@
+[project]
+name = "application-musicale"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Jihed Bhar",email = "bharjihed@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit (>=1.41.1,<2.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "matplotlib (>=3.10.0,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "plotly (>=5.24.1,<6.0.0)",
+    "numpy (>=2.2.2,<3.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "datasets (>=3.2.0,<4.0.0)",
+    "pytest (>=8.3.4,<9.0.0)",
+    "pytest-cov (>=6.0.0,<7.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "application_musicale", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
