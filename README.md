@@ -64,11 +64,12 @@ La page d'accueil donne un aperçu des fonctionnalités de l'application avec de
 
 2. Top 20 des Genres Musicaux les Plus Populaires
 Un classement des genres musicaux les plus populaires, visualisés sous forme de graphique.
-[1er plot](images/1.jpg)
+[1er plot](images/1.png)
 
 3. Top 50 des genres les plus energétiques. 
 Un barplot affichant les top 50 genres populaires en les ordonnant selon leur energie.
-[2eme plot](images/2.jpg)
+[2eme plot](images/2.png)
+
 
 4. Autres Visualisations
 L'application propose également d'autres graphiques pour explorer les données sous différents angles.
