@@ -5,6 +5,7 @@ from application_musicale.viz import genre_popularity, plot_most_popular_artists
 from application_musicale.data_loader import load_data
 
 def main():
+    # Réglage de la page pour avoir une mise en page large
     st.set_page_config(page_title="Application Musicale", page_icon="🎵", layout="wide")
 
     # Affichage de l'image banner.jpg
@@ -16,9 +17,7 @@ def main():
     </div>
     """, unsafe_allow_html=True)
     
-    
-    
-    # En-tête avec un fond personnalisé
+    # Style CSS pour personnaliser l'affichage
     st.markdown(""" 
         <style>
         .header {
@@ -40,6 +39,11 @@ def main():
             text-align: center;
             color: #888;
             margin-top: 50px;
+        }
+        /* Contrôler la taille des graphiques */
+        .stImage img, .stPlot {
+            width: 80% !important;
+            height: auto !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -65,21 +69,44 @@ def show_dashboard():
 
         # Visualisations en grand format, une par ligne
         st.subheader("Popularité par genre")
-        st.pyplot(genre_popularity(df))
+        fig = genre_popularity(df)
+        st.pyplot(fig)
+        st.markdown("""
+            Cette visualisation montre la popularité moyenne des morceaux par genre musical. 
+            On peut observer quels genres dominent en termes de popularité et quels genres sont moins populaires.
+                    """, unsafe_allow_html=True)
 
         st.subheader("Top 20 artistes les plus populaires")
-        st.pyplot(plot_most_popular_artists_by_top_genres(df))
+        fig = plot_most_popular_artists_by_top_genres(df)
+        st.pyplot(fig)
+        st.markdown("""
+        Ce graphique présente les 20 artistes les plus populaires. 
+        Vous pouvez ainsi comparer la popularité relative des différents artistes.
+        """, unsafe_allow_html=True)
 
         st.subheader("Durée vs Popularité")
-        st.pyplot(plot_duration_vs_popularity(df))
+        fig = plot_duration_vs_popularity(df)
+        st.pyplot(fig)
+        st.markdown("""
+        Cette visualisation met en évidence la relation entre la durée des morceaux et leur popularité. 
+        Vous pouvez remarquer si les morceaux plus longs ont tendance à être plus populaires ou non.
+        """, unsafe_allow_html=True)
 
         st.subheader("Énergie moyenne par genre")
-        st.pyplot(plot_energy_by_genre(df))
+        fig = plot_energy_by_genre(df)
+        st.pyplot(fig)
+        st.markdown("""
+        Ce graphique montre l'énergie moyenne des morceaux en fonction du genre musical. 
+        Les genres plus énergiques comme l'EDM peuvent être comparés à des genres plus calmes comme le jazz.
+        """, unsafe_allow_html=True)
 
         st.subheader("Énergie vs Popularité par Genre")
-        st.pyplot(plot_energy_vs_popularity_by_genre(df))
-
-        
+        fig = plot_energy_vs_popularity_by_genre(df)
+        st.pyplot(fig)
+        st.markdown("""
+        Cette visualisation montre la relation entre l'énergie des morceaux et leur popularité, séparée par genre. 
+        Cela peut aider à identifier les genres qui combinent une forte énergie et une grande popularité.
+        """, unsafe_allow_html=True)
 
     else:
         st.error("Les données n'ont pas pu être chargées. Veuillez vérifier le chemin du fichier.")
