@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from application_musicale.data_loader import load_data  # Importer ta fonction de chargement de données

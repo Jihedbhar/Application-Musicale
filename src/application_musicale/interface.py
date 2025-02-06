@@ -7,6 +7,17 @@ from application_musicale.data_loader import load_data
 def main():
     st.set_page_config(page_title="Application Musicale", page_icon="🎵", layout="wide")
 
+    # Affichage de l'image banner.jpg
+    st.image("images/banner.jpg", width=150)
+
+    st.markdown("""
+    <div style="text-align: center;">
+        <h1>Bienvenue dans l'Application Musicale 🎶</h1>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    
+    
     # En-tête avec un fond personnalisé
     st.markdown(""" 
         <style>
@@ -42,7 +53,7 @@ def main():
         st.markdown('<div class="intro">Cliquez ci-dessous pour accéder au dashboard.</div>', unsafe_allow_html=True)
         if st.button("Voir le dashboard"):
             st.session_state.dashboard = True
-            st.experimental_rerun()
+            st.rerun()
 
     st.markdown('<div class="footer">© 2025 - Projet universitaire</div>', unsafe_allow_html=True)
 
@@ -52,46 +63,24 @@ def show_dashboard():
     if df is not None:
         st.markdown('<h2 style="text-align:center;">Dashboard</h2>', unsafe_allow_html=True)
 
-        # 1. Popularité par genre
+        # Visualisations en grand format, une par ligne
         st.subheader("Popularité par genre")
         st.pyplot(genre_popularity(df))
-        st.markdown("""
-            <p style="color: #f4f4f4;">Cette visualisation montre que le pop-film, k-pop, chill sont les genres les plus populaires.</p>
-        """, unsafe_allow_html=True)
 
-        # 2. Top 20 artistes les plus populaires
         st.subheader("Top 20 artistes les plus populaires")
         st.pyplot(plot_most_popular_artists_by_top_genres(df))
-        st.markdown("""
-            <p style="color: #f4f4f4;">Ce graphique présente les 20 artistes les plus populaires basés sur la moyenne de la popularité de leurs morceaux.
-            Les artistes les plus populaires peuvent servir de références pour des collaborations ou des recommandations marketing.</p>
-        """, unsafe_allow_html=True)
 
-        # 3. Durée vs Popularité
         st.subheader("Durée vs Popularité")
         st.pyplot(plot_duration_vs_popularity(df))
-        st.markdown("""
-            <p style="color: #f4f4f4;">Cette analyse explore la relation entre la durée des morceaux et leur popularité.
-            On peut ainsi observer si les morceaux plus courts sont plus tendance auprès des auditeurs.</p>
-        """, unsafe_allow_html=True)
 
-        # 4. Énergie moyenne par genre
         st.subheader("Énergie moyenne par genre")
         st.pyplot(plot_energy_by_genre(df))
-        st.markdown("""
-            <p style="color: #f4f4f4;">Ce graphique affiche l'énergie moyenne des morceaux selon les genres.
-            Les genres avec une forte énergie sont generalement associés à des ambiances plus dynamiques.</p>
-        """, unsafe_allow_html=True)
 
-        # 5. Énergie vs Popularité par Genre
         st.subheader("Énergie vs Popularité par Genre")
         st.pyplot(plot_energy_vs_popularity_by_genre(df))
-        st.markdown("""
-            <p style="color: #f4f4f4;">Cette visualisation montre la corrélation entre l'énergie des morceaux et leur popularité.
-            Il y'a une corrélation positive faible qui suggère que les morceaux plus énergiques sont préférés par le public.</p>
-        """, unsafe_allow_html=True)
 
         
+
     else:
         st.error("Les données n'ont pas pu être chargées. Veuillez vérifier le chemin du fichier.")
 
