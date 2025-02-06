@@ -60,7 +60,7 @@ Aperçu de l'Application
 1. Page d’Accueil
 La page d'accueil donne un aperçu des fonctionnalités de l'application avec des options de visualisation interactive.
 
-![Page d'Accueil](images/home.jpg)
+![Page d'Accueil](images/home.png)
 
 
 2. Top 10 des Morceaux par Popularité
