@@ -87,25 +87,33 @@ L'application propose également d'autres graphiques pour explorer les données 
 Une synthèse des principales conclusions issues de l'analyse des données.
 
 
+# 🎵 Projet de Visualisation Spotify  
 
-Fonctionnalités du Projet
-Visualisation interactive des données Spotify
-Filtrage des données par genre, artiste et popularité
-Affichage de statistiques descriptives
-Comparaison des caractéristiques audio des morceaux
-Technologies Utilisées
-Python 3.8+
-Streamlit (Interface utilisateur)
-Pandas (Manipulation des données)
-Seaborn & Matplotlib (Visualisations)
-Poetry (Gestion des dépendances)
-Tests
-Pour exécuter les tests unitaires :
+## 🚀 Fonctionnalités  
+✔️ **Visualisation interactive** des données Spotify  
+✔️ **Filtrage dynamique** par **genre**, **artiste** et **popularité**  
+✔️ **Affichage de statistiques descriptives** sur les morceaux  
+✔️ **Comparaison des caractéristiques audio** (tempo, énergie, danseabilité...)  
 
-bash
-Copy
-Edit
+---
+
+## 🛠 Technologies Utilisées  
+| Outil         | Usage |
+|--------------|--------------------------------|
+| 🐍 **Python 3.8+** | Langage de programmation |
+| 🎨 **Streamlit** | Interface utilisateur interactive |
+| 📊 **Pandas** | Manipulation et analyse des données |
+| 📉 **Seaborn & Matplotlib** | Visualisation des données |
+| 📦 **Poetry** | Gestion des dépendances |
+
+---
+
+## 🧪 Tests Unitaires  
+Pour exécuter les tests, utilisez la commande suivante :  
+
+```bash
 pytest tests/
+```
 Auteur
 Mohamed Jihed Bhar
 📍 Tunis, Tunisie
