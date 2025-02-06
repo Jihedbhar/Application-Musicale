@@ -108,5 +108,5 @@ Edit
 pytest tests/
 Auteur
 Mohamed Jihed Bhar
-📍 Paris, France
-✉️ jihed@dauphine.tn
+📍 Tunis, Tunisie
+✉️ jihed.bhar@dauphine.tn
